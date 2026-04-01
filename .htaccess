@@ -120,27 +120,28 @@ RewriteRule ^hata-([a-zA-Z0-9\-_]+)?$ error.php?seo=$1 [L,QSA]
 RewriteRule ^urunler$ kategori.php?seo=urunler [L,QSA]
 RewriteRule ^urunler/([a-zA-Z0-9\-_]+)?$ kategori.php?seo=$1 [L,QSA]
 
-ErrorDocument 400 https://www.enurcnc.com.tr/404
-ErrorDocument 401 https://www.enurcnc.com.tr/404
-ErrorDocument 402 https://www.enurcnc.com.tr/404
-ErrorDocument 403 https://www.enurcnc.com.tr/404
-ErrorDocument 404 https://www.enurcnc.com.tr/404
-ErrorDocument 405 https://www.enurcnc.com.tr/404
-ErrorDocument 406 https://www.enurcnc.com.tr/404
-ErrorDocument 407 https://www.enurcnc.com.tr/404
-ErrorDocument 408 https://www.enurcnc.com.tr/404
-ErrorDocument 409 https://www.enurcnc.com.tr/404
-ErrorDocument 410 https://www.enurcnc.com.tr/404
-ErrorDocument 411 https://www.enurcnc.com.tr/404
-ErrorDocument 412 https://www.enurcnc.com.tr/404
-ErrorDocument 413 https://www.enurcnc.com.tr/404
-ErrorDocument 414 https://www.enurcnc.com.tr/404
-ErrorDocument 500 https://www.enurcnc.com.tr/404
-ErrorDocument 501 https://www.enurcnc.com.tr/404
-ErrorDocument 502 https://www.enurcnc.com.tr/404
-ErrorDocument 503 https://www.enurcnc.com.tr/404
-ErrorDocument 504 https://www.enurcnc.com.tr/404
-ErrorDocument 505 https://www.enurcnc.com.tr/404
+# Yerel sayfa: favicon vb. 404 olduğunda dış domaine yönlendirmeyin (timeout / beyaz sayfa).
+ErrorDocument 400 /404.php
+ErrorDocument 401 /404.php
+ErrorDocument 402 /404.php
+ErrorDocument 403 /404.php
+ErrorDocument 404 /404.php
+ErrorDocument 405 /404.php
+ErrorDocument 406 /404.php
+ErrorDocument 407 /404.php
+ErrorDocument 408 /404.php
+ErrorDocument 409 /404.php
+ErrorDocument 410 /404.php
+ErrorDocument 411 /404.php
+ErrorDocument 412 /404.php
+ErrorDocument 413 /404.php
+ErrorDocument 414 /404.php
+ErrorDocument 500 /404.php
+ErrorDocument 501 /404.php
+ErrorDocument 502 /404.php
+ErrorDocument 503 /404.php
+ErrorDocument 504 /404.php
+ErrorDocument 505 /404.php
 
 #Settings
 Options All -Indexes

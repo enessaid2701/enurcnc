@@ -21,4 +21,8 @@ or die('Unable to connect to Database');
 
 $query	= mysqli_query($conn,"SELECT * FROM site_ayar");
 $ayar	= mysqli_fetch_array($query);
+if (!$ayar) {
+	header('Content-Type: text/plain; charset=utf-8', true, 503);
+	exit('Veritabanında site_ayar kaydı yok. Üretim SQL yedeğini import edin (docker/mysql/init veya mysql dump).');
+}
 ?>
