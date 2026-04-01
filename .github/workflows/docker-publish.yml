@@ -1,4 +1,4 @@
-name: Build and push Docker image
+name: Build, push and deploy
 
 on:
   push:
@@ -11,9 +11,10 @@ on:
 
 env:
   IMAGE: enessaid2701/enurcnc
+  DEPLOY_PATH: /root/enurcnc
 
 jobs:
-  docker:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,8 +29,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: enessaid2701
+          password: EnesSaid-2701.
 
       - name: Docker metadata (tags)
         id: meta
@@ -38,7 +39,6 @@ jobs:
           images: ${{ env.IMAGE }}
           tags: |
             type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=sha,format=short
@@ -53,3 +53,27 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Copy compose and MySQL init to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 136.144.240.159
+          username: root
+          password: jTsQUpMqxPRd
+          port: 23422
+          source: "docker-compose.prod.yml,docker/mysql"
+          target: /root/enurcnc
+
+      - name: Deploy on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 136.144.240.159
+          username: root
+          password: jTsQUpMqxPRd
+          port: 23422
+          script: |
+            set -e
+            cd ${{ env.DEPLOY_PATH }}
+            printf '%s\n' "EnesSaid-2701." | docker login --username "enessaid2701" --password-stdin
+            docker compose -f docker-compose.prod.yml pull
+            docker compose -f docker-compose.prod.yml up -d --force-recreate --remove-orphans
