@@ -1,0 +1,166 @@
+
+RewriteEngine on
+
+RewriteBase /
+
+Redirect 301 /uygulama-alanlari/savunma-sanayi https://www.enurcnc.com/sektor/savunma-sanayi
+Redirect 301 /uygulama-alanlari https://www.enurcnc.com/sektorler
+Redirect 301 /hizmetler/yedek-parca-temini https://www.enurcnc.com/hizmetler
+Redirect 301 /uygulama-alanlari/medikal https://www.enurcnc.com/sektor/medikal
+Redirect 301 /urunler/cnc-isleme-merkezi/dik-isleme-merkezi https://www.enurcnc.com/urunler/cnc-dikey-isleme-merkezi
+Redirect 301 /urunler/cnc-torna/poligon-tezgahlari https://www.enurcnc.com/urunler/cnc-dikey-torna
+Redirect 301 /hizmet/cnc-icin-rulman-yedek-parca-temini- https://www.enurcnc.com/hizmetler
+Redirect 301 /uygulama-alanlari/talasli-imalat https://www.enurcnc.com/hizmetler
+Redirect 301 /urunler/cnc-torna/duz-banko https://www.enurcnc.com/urunler/cnc-dikey-torna
+Redirect 301 /sertifikalar https://www.enurcnc.com/ 
+Redirect 301 /uygulama-alanlari/endustriyel-mutfak https://www.enurcnc.com/sektor/endustriyel-mutfak
+Redirect 301 /referanslar https://www.enurcnc.com/
+Redirect 301 /uygulama-alanlari/havacilik---denizcilik https://www.enurcnc.com/sektor/havacilik-denizcilik
+Redirect 301 /uygulama-alanlari/metal-isleme https://www.enurcnc.com/sektor/metal-isleme
+Redirect 301 /urunler/cnc-torna/egik-banko https://www.enurcnc.com/urunler/cnc-dikey-torna
+Redirect 301 /uygulama-alanlari/otomotiv https://www.enurcnc.com/sektor/otomotiv
+Redirect 301 /fuarlar https://www.enurcnc.com/
+Redirect 301 /blog https://www.enurcnc.com/
+Redirect 301 /hizmetler/bakim---onarim---servis https://www.enurcnc.com/hizmetler
+Redirect 301 /urunler/cnc-isleme-merkezi https://www.enurcnc.com/urunler
+Redirect 301 /haberler https://www.enurcnc.com/
+Redirect 301 /uygulama-alanlari/metal-plastik https://www.enurcnc.com/sektor/metal-plastik
+Redirect 301 /kurumsal https://www.enurcnc.com/hakkimizda
+Redirect 301 /urunler/cnc-torna/yatay-torna https://www.enurcnc.com/urunler/cnc-yatay-isleme-merkezi
+Redirect 301 /urunler/cnc-torna https://www.enurcnc.com/urunler
+Redirect 301 /hizmetler/makine-tamiri https://www.enurcnc.com/hizmetler
+Redirect 301 /urunler/cnc-isleme-merkezi/yatay-isleme-merkezi https://www.enurcnc.com/urunler/cnc-yatay-isleme-merkezi
+Redirect 301 /uygulama-alanlari/torna-tevsiye https://www.enurcnc.com/sektor/torna-tevsiye
+Redirect 301 /urunler/cnc-torna/dik-torna https://www.enurcnc.com/urunler/cnc-dikey-isleme-merkezi
+Redirect 301 /urunler/cnc-isleme-merkezi/koprulu-isleme-merkezi https://www.enurcnc.com/urunler
+Redirect 301 /urun/kdvl800-kdvl1000 https://www.enurcnc.com/urun/kdvl600-600h-800-800h
+Redirect 301 /urun/kdvl320-kdvl460-kdvl600 https://www.enurcnc.com/urun/kdvl320-320h
+Redirect 301 /urun/ck6140zx-ck6146zx-ck6150zx https://www.enurcnc.com/urun/ck6140zx-6146zx-6150zx
+Redirect 301 /urun/ck6191b-ck61100b-ck61110b https://www.enurcnc.com/urun/ck6191b-61100b-61110b
+Redirect 301 /urun/ck6130l https://www.enurcnc.com/urun/ck6130s-6136s-6140s
+Redirect 301 /urun/ck61140-ck61160 https://www.enurcnc.com/urun/ck61140e-61160e-ck61200e
+Redirect 301 /urun/kdcl-10h-kdcl-15h https://www.enurcnc.com/urun/kdcl-15-15h
+Redirect 301 /urun/ck61140e-ck61160e https://www.enurcnc.com/urun/ck61140e-61160e-ck61200e
+Redirect 301 /urun/ck6156-ck6166 https://www.enurcnc.com/urun/ck6150-6156-6166
+Redirect 301 /urun/kdcl-10-kdcl-10p-kdcl-15 https://www.enurcnc.com/urun/kdcl-15d-15dy
+Redirect 301 /haber/web-sitemiz-yeni-tasarimi-ve-yazilimi-ile-yayinda https://www.enurcnc.com/
+Redirect 301 /urun/kdcl-25-kdcl-28-kdcl-30 https://www.enurcnc.com/urun/kdck-25-25h
+Redirect 301 /urun/kdvm1000la https://www.enurcnc.com/urun/kdvm800la-1000la
+Redirect 301 /urun/kdhm500j https://www.enurcnc.com/urunler
+Redirect 301 /urun/kdz500h https://www.enurcnc.com/urun/kdz600h
+Redirect 301 /urun/kdvm1000lv-kdvm1070lv https://www.enurcnc.com/urunler
+Redirect 301 /urun/kdu650v https://www.enurcnc.com/urun/kdu400v-500v-650v
+Redirect 301 /urun/kdvm855l-kdvm1165l https://www.enurcnc.com/urun/kdvm855l
+Redirect 301 /urun/kdvm1370l-kdvm1580l-kdvm1890l https://www.enurcnc.com/urun/kdvm1370l-1580l-1690l-1890l
+Redirect 301 /urun/kdu800v https://www.enurcnc.com/urun/kdu630vt-800vt-1000vt-1200vt
+
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+#Page Seo Url Edit
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^sitemap.xml$ sitemap.php [NC,L]
+RewriteRule ^404$ 404.php [NC]
+
+##### Kurumsal #####
+RewriteRule ^kurumsal$ kurumsal.php [NC]
+RewriteRule ^insan-kaynaklari$ ik.php [NC]
+RewriteRule ^sertifikalar$ sertifikalar.php [NC]
+RewriteRule ^is-sagligi-guvenligi$ is_guvenligi.php [NC]
+RewriteRule ^referanslar$ is-ortaklarimiz.php [NC]
+RewriteRule ^cevre-politikasi$ cevre_politikasi.php [NC]
+RewriteRule ^lojistik-guvenligi$ lojistik_guvenligi.php [NC]
+RewriteRule ^kalite-politikasi$ kalite_politikasi.php [NC]
+RewriteRule ^kvkk$ kvkk.php [NC]
+RewriteRule ^cerez-politikasi$ cerez_politikasi.php [NC]
+
+##### Resmi Sayfalar #####
+RewriteRule ^cerez-politikasi$ cerez_politikasi.php [NC]
+RewriteRule ^kvkk$ kvkk.php [NC]
+RewriteRule ^calismalar$ calismalar.php [NC]
+RewriteRule ^hakkimizda$ hakkimizda.php [NC]
+RewriteRule ^aydinlatma-metni$ aydinlatma_metni.php [NC]
+RewriteRule ^kamera-aydinlatma-metni$ kamera_aydinlatma_metni.php [NC]
+RewriteRule ^veri-sorumlusuna-basvuru-formu$ veri_sorumlusu_basvuru_formu.php [NC]
+
+##### Urunler #####
+RewriteRule ^urun/([a-zA-Z0-9\-_]+)?$ urun-detay.php?seo=$1 [L,NC]
+
+##### Kullanim Alanlari #####
+RewriteRule ^hizmetler$ kullanim-alanlari.php [NC]
+RewriteRule ^hizmet/([a-zA-Z0-9\-_]+)?$ kullanim-alani.php?seo=$1 [L,QSA]
+
+##### İş Ortakları #####
+##### RewriteRule ^referanslar$ is-ortaklarimiz.php [NC]
+##### RewriteRule ^is-ortagi/([a-zA-Z0-9\-_]+)?$ is-ortaklari-detay.php?seo=$1 [L,QSA]
+
+##### Medya #####
+#####RewriteRule ^haberler$ medya-basin.php [NC]
+#####RewriteRule ^haber/([a-zA-Z0-9\-_]+)?$ medya-detay.php?seo=$1 [L,QSA]
+RewriteRule ^sektorler$ medya-basin.php [NC]
+RewriteRule ^sektor/([a-zA-Z0-9\-_]+)?$ medya-detay.php?seo=$1 [L,QSA]
+#####RewriteRule ^fuarlar$ medya-basin.php [NC]
+#####RewriteRule ^fuar/([a-zA-Z0-9\-_]+)?$ medya-detay.php?seo=$1 [L,QSA]
+
+#####RewriteRule ^kataloglar$ kataloglar.php [L,NC]
+#####RewriteRule ^sertifikalar$ sertifikalar.php [L,NC]
+#####RewriteRule ^tanitim-filmleri$ tanitim_filmleri.php [L,NC]
+#####RewriteRule ^fuarlar$ fuarlar.php [L,NC]
+RewriteRule ^iletisim$ iletisim.php [NC]
+
+RewriteRule ^hata-([a-zA-Z0-9\-_]+)?$ error.php?seo=$1 [L,QSA]
+
+##### Kategoriler #####
+RewriteRule ^urunler$ kategori.php?seo=urunler [L,QSA]
+RewriteRule ^urunler/([a-zA-Z0-9\-_]+)?$ kategori.php?seo=$1 [L,QSA]
+
+ErrorDocument 400 https://www.enurcnc.com.tr/404
+ErrorDocument 401 https://www.enurcnc.com.tr/404
+ErrorDocument 402 https://www.enurcnc.com.tr/404
+ErrorDocument 403 https://www.enurcnc.com.tr/404
+ErrorDocument 404 https://www.enurcnc.com.tr/404
+ErrorDocument 405 https://www.enurcnc.com.tr/404
+ErrorDocument 406 https://www.enurcnc.com.tr/404
+ErrorDocument 407 https://www.enurcnc.com.tr/404
+ErrorDocument 408 https://www.enurcnc.com.tr/404
+ErrorDocument 409 https://www.enurcnc.com.tr/404
+ErrorDocument 410 https://www.enurcnc.com.tr/404
+ErrorDocument 411 https://www.enurcnc.com.tr/404
+ErrorDocument 412 https://www.enurcnc.com.tr/404
+ErrorDocument 413 https://www.enurcnc.com.tr/404
+ErrorDocument 414 https://www.enurcnc.com.tr/404
+ErrorDocument 500 https://www.enurcnc.com.tr/404
+ErrorDocument 501 https://www.enurcnc.com.tr/404
+ErrorDocument 502 https://www.enurcnc.com.tr/404
+ErrorDocument 503 https://www.enurcnc.com.tr/404
+ErrorDocument 504 https://www.enurcnc.com.tr/404
+ErrorDocument 505 https://www.enurcnc.com.tr/404
+
+#Settings
+Options All -Indexes
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+<files parts/footer.php>
+order allow,deny
+deny from all
+</files>
+<files parts/head.php>
+order allow,deny
+deny from all
+</files>
+<files parts/header.php>
+order allow,deny
+deny from all
+</files>
+<files parts/infrastructure.php>
+order allow,deny
+deny from all
+</files>
+

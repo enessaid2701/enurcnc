@@ -1,0 +1,162 @@
+#arlina {
+  background: #fff;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 970px;
+  overflow: hidden;
+  z-index: 3;
+}
+
+#animated-thumbnail {
+  position: relative;
+  background: #fff;
+}
+
+.bagidua img,
+.bagitiga img,
+.bagiempat img {
+  -webkit-backface-visibility: hidden;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+#box,
+#box2,
+#box3 {
+  position: relative;
+  height: 170px;
+  display: block;
+  background: #ecf0f1;
+  margin: 0 0 20px 0;
+}
+
+#box:last-child {
+  margin: 0;
+}
+
+#box:before,
+#box2:before,
+#box3:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 170px;
+  width: 250px;
+  margin: 0;
+  background: #fff url("https://4.bp.blogspot.com/-85zQwMdLm24/VmGwA9aFRgI/AAAAAAAAAVM/AHpkZL9MdTQ/s1600/Nubie%2BBanget%2BBlogger%2BTemplate.jpg") center;
+  background-size: cover;
+}
+
+#box2:before {
+  background: #fff url("https://2.bp.blogspot.com/-V5Pi6tg3kk4/VmFRvAbi6rI/AAAAAAAAATc/9gm3XBewj0k/s1600/Sweet%2BYummy%2BChocolate%2BCake.jpg") center;
+  background-size: cover;
+}
+
+#box3:before {
+  background: #fff url("https://2.bp.blogspot.com/-xA82xCIl_8M/VmFRX7fxEaI/AAAAAAAAATU/BXBvzBFgiK0/s1600/Top%2BDestinations%2BTo%2BTravel%2BNext%2BSummer.jpg") center;
+  background-size: cover;
+}
+
+#box:after,
+#box2:after,
+#box3:after {
+  position: absolute;
+  content: "\f030";
+  font-family: FontAwesome;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  height: 170px;
+  line-height: 170px;
+  width: 250px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#box:hover:after,
+#box2:hover:after,
+#box3:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+#footer-wrapper {
+  position: relative;
+  display: block;
+  background: #f3f6f7;
+  overflow: hidden;
+  padding: 10px;
+}
+
+#footer-wrapper h2 {
+  display: table;
+  text-align: center;
+  padding: 10px;
+  color: #95a5a6;
+  font-size: 200%;
+  margin: auto;
+}
+
+#footer-wrapper .boxi {
+  width: 31%;
+  height: 200px;
+  float: left;
+  margin: 10px;
+  background: rgba(255, 255, 255, .5);
+  transition: all 0.6s;
+}
+
+#footer-wrapper .boxi:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+#credit {
+  margin: 0;
+  background: #78c1f2;
+}
+
+#credit span {
+  display: table;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-size: 16px;
+  line-height: 80px;
+  margin: auto;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.lg-toolbar {
+  background-color: #29323c !important;
+}
+
+#lg-counter {
+  color: #fff !important;
+}
+
+.lg-toolbar .lg-icon {
+  color: #fff !important;
+}
