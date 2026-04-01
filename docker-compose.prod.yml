@@ -1,13 +1,14 @@
 # Sunucuda: .env dosyası aynı dizinde olmalı (MYSQL_* değişkenleri).
 # docker compose -f docker-compose.prod.yml up -d
 #
-# NOT: MYSQL_USER asla "root" olamaz — resmi mysql imajı bunu reddeder ve db ayağa kalkmaz.
+# App yalnızca 127.0.0.1:8080 — dışarıdan Nginx (80/443) reverse proxy kullan.
+# NOT: MYSQL_USER asla "root" olamaz — resmi mysql imajı bunu reddeder.
 
 services:
   app:
     image: enessaid2701/enurcnc:${APP_IMAGE_TAG:-latest}
     ports:
-      - "${APP_PORT:-8080}:80"
+      - "127.0.0.1:8080:80"
     environment:
       DB_HOSTNAME: db
       DB_USERNAME: ${MYSQL_USER:-enurcnc_user2}

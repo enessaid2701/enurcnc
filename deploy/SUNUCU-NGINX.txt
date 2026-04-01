@@ -1,0 +1,79 @@
+================================================================================
+ENURCNC.COM — SUNUCU: NGINX + LET'S ENCRYPT + DOCKER (sıfırdan özet)
+================================================================================
+
+ÖN KOŞULLAR
+- DNS: enurcnc.com ve www.enurcnc.com A kaydı sunucu IPv4'üne (ör. 136.144.240.159)
+- SSH root (veya sudo) ile sunucuya giriş
+- Docker stack: /root/enurcnc içinde docker-compose.prod.yml
+
+--------------------------------------------------------------------------------
+1) DOCKER'I NGINX İÇİN DİNLEMEYE AL
+--------------------------------------------------------------------------------
+Projede app artık sadece 127.0.0.1:8080'de (repodaki docker-compose.prod.yml).
+
+Sunucuda:
+  cd /root/enurcnc
+  git pull   # veya güncel compose dosyasını kopyala
+  docker compose -f docker-compose.prod.yml up -d --force-recreate
+
+Kontrol:
+  curl -sI http://127.0.0.1:8080/   → 200 veya 301 beklenir
+
+--------------------------------------------------------------------------------
+2) NGINX KUR
+--------------------------------------------------------------------------------
+  apt update
+  apt install -y nginx certbot python3-certbot-nginx
+
+Varsayılan site çakışmasın diye (isteğe bağlı):
+  rm -f /etc/nginx/sites-enabled/default
+
+--------------------------------------------------------------------------------
+3) SITE CONFIG KOPYALA
+--------------------------------------------------------------------------------
+Bu repodaki deploy/nginx-enurcnc.conf dosyasını sunucuya at:
+
+  nano /etc/nginx/sites-available/enurcnc
+  (içeriği yapıştır)
+
+Aktif et:
+  ln -sf /etc/nginx/sites-available/enurcnc /etc/nginx/sites-enabled/enurcnc
+  nginx -t && systemctl reload nginx
+
+--------------------------------------------------------------------------------
+4) LET'S ENCRYPT (HTTPS)
+--------------------------------------------------------------------------------
+  certbot --nginx -d enurcnc.com -d www.enurcnc.com
+
+E-posta sorulur; şartları kabul et. Certbot nginx config'e SSL ekler ve 80→443 yönlendirir.
+
+Otomatik yenileme testi:
+  certbot renew --dry-run
+
+--------------------------------------------------------------------------------
+5) GÜVENLİK DUVARI
+--------------------------------------------------------------------------------
+Bulut panelinde: TCP 80 ve 443 açık olsun.
+UFW kullanıyorsan:
+  ufw allow 80/tcp
+  ufw allow 443/tcp
+  ufw enable   # veya mevcut kurallara ekle
+
+--------------------------------------------------------------------------------
+6) VERİTABANI: website_link
+--------------------------------------------------------------------------------
+Site CSS/asset adresleri için:
+
+  docker compose -f docker-compose.prod.yml exec -T db mysql -uroot -p'SIFRE' enurcnc_db -e \
+    "UPDATE site_ayar SET website_link='https://www.enurcnc.com' WHERE id=1;"
+
+(www kullanmayacaksan https://enurcnc.com yap; .htaccess www yönlendirmesiyle uyumlu olsun.)
+
+--------------------------------------------------------------------------------
+7) KONTROL
+--------------------------------------------------------------------------------
+Tarayıcı: https://www.enurcnc.com
+Sunucuda: curl -sI https://www.enurcnc.com/
+
+================================================================================
