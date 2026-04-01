@@ -10,7 +10,7 @@ services:
       - "${APP_PORT:-8080}:80"
     environment:
       DB_HOSTNAME: db
-      DB_USERNAME: ${MYSQL_USER:-enurcnc}
+      DB_USERNAME: ${MYSQL_USER:-enurcnc_user2}
       DB_PASSWORD: ${MYSQL_PASSWORD}
       DB_NAME: ${MYSQL_DATABASE:-enurcnc_db}
     depends_on:
@@ -24,7 +24,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-enurcnc_db}
-      MYSQL_USER: ${MYSQL_USER:-enurcnc}
+      MYSQL_USER: ${MYSQL_USER:-enurcnc_user2}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
