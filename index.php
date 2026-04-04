@@ -33,11 +33,13 @@ include("parts/header.php")
 
         <?php
             $slider_query = mysqli_query($conn,"SELECT * FROM slider WHERE statu = 1 ORDER BY `rank` ASC");
-            foreach($slider_query as $slider){ 
-            $file_path = rtrim($_SERVER['DOCUMENT_ROOT'], "/") . "/" . ltrim($slider["image"], "/");
+            if ($slider_query instanceof mysqli_result) {
+            while ($slider = mysqli_fetch_assoc($slider_query)) {
+            $file_path = rtrim($_SERVER['DOCUMENT_ROOT'], "/") . "/" . ltrim((string)($slider["image"] ?? ""), "/");
 
-            $mime_type = mime_content_type($file_path);
-            if(strpos($mime_type, 'video') !== false){
+            $mime_type = (is_file($file_path) && is_readable($file_path)) ? @mime_content_type($file_path) : false;
+            $is_video = is_string($mime_type) && strpos($mime_type, 'video') !== false;
+            if ($is_video) {
             ?>
         <div class="slide-item-content">
             <div class="slide-item align-content-center">
@@ -100,7 +102,11 @@ include("parts/header.php")
 
             </div>
         </div>
-        <?php }} ?>
+        <?php }
+            }
+            mysqli_free_result($slider_query);
+            }
+            ?>
 
     </div>
     <div class="px-5 w-100 controller-field d-flex flex-column justify-content-between bottom25 position-absolute gap-30">
