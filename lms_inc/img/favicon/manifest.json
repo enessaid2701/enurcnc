@@ -1,0 +1,10 @@
+{
+  "name": "ENUR CNC Makine Sanayi",
+  "short_name": "ENUR CNC",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": []
+}
