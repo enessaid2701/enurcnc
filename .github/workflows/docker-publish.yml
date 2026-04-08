@@ -59,8 +59,8 @@ jobs:
         with:
           host: 136.144.240.159
           username: root
-          password: jTsQUpMqxPRd
-          port: 23422
+          # password: jTsQUpMqxPRd
+          # port: 23422
           source: "docker-compose.prod.yml,docker/mysql"
           target: /root/enurcnc
 
