@@ -10,10 +10,14 @@ Bu proje artık Docker yerine `nginx + php-fpm` ile çalışacak şekilde yapıl
 
 ## Gereken Paketler (Ubuntu/Debian)
 
+Bu proje için PHP-FPM ve gerekli eklentiler gereklidir. Mevcut dağıtıma bağlı olarak paket isimleri değişebilir.
+
 ```bash
 sudo apt update
-sudo apt install nginx php8.2-fpm php8.2-mysql php8.2-xml php8.2-mbstring php8.2-gd php8.2-curl php8.2-zip
+sudo apt install nginx php-fpm php-mysql php-xml php-mbstring php-gd php-curl php-zip
 ```
+
+Eğer sistemde `php-fpm` paketi bulunmazsa, uygun PHP sürümünü içeren depoyu ekleyin.
 
 ## Projeyi Kopyalama
 
