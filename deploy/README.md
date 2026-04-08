@@ -41,7 +41,7 @@ sudo systemctl reload nginx
 ## PHP-FPM Servisi
 
 ```bash
-sudo systemctl enable --now php8.2-fpm
+sudo systemctl enable --now php8.3-fpm
 ```
 
 ## Dosya İzinleri
@@ -56,7 +56,7 @@ sudo find /var/www/enurcnc -type f -exec chmod 644 {} \;
 
 - Nginx yapılandırmasını test etmek için: `sudo nginx -t`
 - Nginx günlükleri: `/var/log/nginx/error.log`
-- PHP-FPM günlükleri: `/var/log/php8.2-fpm.log`
+- PHP-FPM günlükleri: `/var/log/php8.3-fpm.log`
 
 ## Önemli
 
