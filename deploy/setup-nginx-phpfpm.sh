@@ -7,7 +7,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-INSTALL_ROOT="${1:-/var/www/enurcnc}"
+INSTALL_ROOT="${1:-/var/www/html}"
 
 if [ "$INSTALL_ROOT" = "$PROJECT_ROOT" ]; then
     echo "Using project root as install root: $PROJECT_ROOT"
