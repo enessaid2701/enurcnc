@@ -90,6 +90,20 @@ install_php_rhel() {
     sudo $INSTALLER install -y $PHP_PACKAGES
 }
 
+detect_php_fpm_service() {
+    for svc in php-fpm php8.3-fpm php8.2-fpm php8.1-fpm php8.0-fpm php7.4-fpm; do
+        if sudo systemctl list-unit-files --type=service | grep -q "^${svc}.service"; then
+            PHP_FPM_SERVICE="$svc"
+            return 0
+        fi
+        if sudo systemctl status "$svc" >/dev/null 2>&1; then
+            PHP_FPM_SERVICE="$svc"
+            return 0
+        fi
+    done
+    return 1
+}
+
 if echo "$distro" | grep -Eiq 'debian|ubuntu'; then
     install_php_ubuntu
 elif echo "$distro" | grep -Eiq 'rhel|centos|rocky|almalinux|fedora'; then
@@ -111,6 +125,13 @@ sudo cp "$PROJECT_ROOT/deploy/nginx-enurcnc.conf" /etc/nginx/sites-available/enu
 sudo ln -sf /etc/nginx/sites-available/enurcnc /etc/nginx/sites-enabled/enurcnc
 
 # 4) PHP-FPM servisini etkinleştir
+if [ -z "$PHP_FPM_SERVICE" ]; then
+    detect_php_fpm_service || true
+fi
+if [ -z "$PHP_FPM_SERVICE" ]; then
+    echo "PHP-FPM servisi bulunamadı. Lütfen kurulum çıktısını kontrol edin ve doğru servis adını belirleyin."
+    exit 1
+fi
 sudo systemctl enable --now "$PHP_FPM_SERVICE"
 
 # 5) İzinleri ayarlayın
