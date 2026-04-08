@@ -27,10 +27,7 @@ fi
 
 install_php_ubuntu() {
     sudo apt update
-    if apt-cache show php-fpm >/dev/null 2>&1; then
-        PHP_PACKAGES="php-fpm php-mysql php-xml php-mbstring php-gd php-curl php-zip"
-        PHP_FPM_SERVICE="php-fpm"
-    elif apt-cache show php8.3-fpm >/dev/null 2>&1; then
+    if apt-cache show php8.3-fpm >/dev/null 2>&1; then
         PHP_PACKAGES="php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-gd php8.3-curl php8.3-zip"
         PHP_FPM_SERVICE="php8.3-fpm"
     elif apt-cache show php8.2-fpm >/dev/null 2>&1; then
@@ -45,15 +42,15 @@ install_php_ubuntu() {
     elif apt-cache show php7.4-fpm >/dev/null 2>&1; then
         PHP_PACKAGES="php7.4-fpm php7.4-mysql php7.4-xml php7.4-mbstring php7.4-gd php7.4-curl php7.4-zip"
         PHP_FPM_SERVICE="php7.4-fpm"
+    elif apt-cache show php-fpm >/dev/null 2>&1; then
+        PHP_PACKAGES="php-fpm php-mysql php-xml php-mbstring php-gd php-curl php-zip"
+        PHP_FPM_SERVICE="php-fpm"
     else
         echo "PHP paketleri bulunamadı. Ondrej PHP PPA ekleniyor..."
         sudo apt install -y software-properties-common ca-certificates apt-transport-https
         sudo add-apt-repository -y ppa:ondrej/php
         sudo apt update
-        if apt-cache show php-fpm >/dev/null 2>&1; then
-            PHP_PACKAGES="php-fpm php-mysql php-xml php-mbstring php-gd php-curl php-zip"
-            PHP_FPM_SERVICE="php-fpm"
-        elif apt-cache show php8.3-fpm >/dev/null 2>&1; then
+        if apt-cache show php8.3-fpm >/dev/null 2>&1; then
             PHP_PACKAGES="php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-gd php8.3-curl php8.3-zip"
             PHP_FPM_SERVICE="php8.3-fpm"
         elif apt-cache show php8.2-fpm >/dev/null 2>&1; then
@@ -68,12 +65,16 @@ install_php_ubuntu() {
         elif apt-cache show php7.4-fpm >/dev/null 2>&1; then
             PHP_PACKAGES="php7.4-fpm php7.4-mysql php7.4-xml php7.4-mbstring php7.4-gd php7.4-curl php7.4-zip"
             PHP_FPM_SERVICE="php7.4-fpm"
+        elif apt-cache show php-fpm >/dev/null 2>&1; then
+            PHP_PACKAGES="php-fpm php-mysql php-xml php-mbstring php-gd php-curl php-zip"
+            PHP_FPM_SERVICE="php-fpm"
         else
             echo "PHP paketleri hala bulunamadı. Lütfen uygun depoyu kontrol edin."
             exit 1
         fi
     fi
     sudo apt install -y $PHP_PACKAGES
+    detect_php_fpm_service || true
 }
 
 install_php_rhel() {
@@ -88,6 +89,7 @@ install_php_rhel() {
     PHP_PACKAGES="php php-fpm php-mysqlnd php-xml php-mbstring php-gd php-curl php-zip"
     PHP_FPM_SERVICE="php-fpm"
     sudo $INSTALLER install -y $PHP_PACKAGES
+    detect_php_fpm_service || true
 }
 
 detect_php_fpm_service() {
